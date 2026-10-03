@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ZARR | Fire-Grilled Beef Burgers | Lahore</title>
+
+  <meta
+    name="description"
+    content="ZARR serves bold, fire-grilled beef burgers in Shahdara, Lahore. Fresh ingredients, real fire and serious flavor."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #070707;
+      --dark: #111111;
+      --dark-2: #171717;
+      --white: #ffffff;
+      --red: #e51b23;
+      --red-dark: #b90f16;
+      --gray: #a7a7a7;
+      --light-gray: #d4d4d4;
+      --border: #292929;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: "Inter", sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 20px 0;
+      background: rgba(7, 7, 7, 0.90);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "Anton", sans-serif;
+      font-size: 38px;
+      letter-spacing: 3px;
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-links a:not(.nav-order):hover {
+      color: var(--red);
+    }
+
+    .nav-order {
+      background: var(--red);
+      padding: 12px 20px;
+      border-radius: 4px;
+      transition: 0.2s ease;
+    }
+
+    .nav-order:hover {
+      background: #ff252d;
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 78% 50%,
+          rgba(229, 27, 35, 0.25),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 65% 80%,
+          rgba(255,255,255,0.05),
+          transparent 20%
+        ),
+        linear-gradient(
+          110deg,
+          #070707 25%,
+          #111111 100%
+        );
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -180px;
+      top: 10%;
+      width: 650px;
+      height: 650px;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 80px rgba(255,255,255,0.015),
+        0 0 0 160px rgba(255,255,255,0.01);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      padding-top: 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-family: "Anton", sans-serif;
+      font-size: clamp(76px, 12vw, 155px);
+      line-height: 0.84;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    h1 span {
+      color: var(--red);
+    }
+
+    .hero-text {
+      margin-top: 32px;
+      color: var(--light-gray);
+      font-size: 18px;
+      max-width: 560px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      display: inline-block;
+      padding: 16px 28px;
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      transition: 0.2s ease;
+    }
+
+    .primary-btn {
+      background: var(--red);
+    }
+
+    .primary-btn:hover {
+      background: #ff252d;
+      transform: translateY(-2px);
+    }
+
+    .secondary-btn {
+      border: 1px solid #555;
+    }
+
+    .secondary-btn:hover {
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-label {
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: "Anton", sans-serif;
+      font-size: clamp(52px, 7vw, 92px);
+      text-transform: uppercase;
+      line-height: 0.92;
+    }
+
+    /* =========================
+       WHY ZARR
+    ========================= */
+
+    .why {
+      background: var(--dark);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 60px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .why-card {
+      background: var(--dark);
+      padding: 48px 35px;
+    }
+
+    .why-number {
+      color: var(--red);
+      font-family: "Anton", sans-serif;
+      font-size: 42px;
+    }
+
+    .why-card h3 {
+      font-size: 25px;
+      margin: 18px 0 12px;
+      text-transform: uppercase;
+    }
+
+    .why-card p {
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    /* =========================
+       MENU
+    ========================= */
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-top: 60px;
+    }
+
+    .burger-card {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: 0.25s ease;
+    }
+
+    .burger-card:hover {
+      transform: translateY(-5px);
+      border-color: #444;
+    }
+
+    .burger-image {
+      height: 350px;
+      background:
+        radial-gradient(
+          circle at center,
+          #333 0%,
+          #181818 40%,
+          #0c0c0c 100%
+        );
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #666;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .burger-info {
+      padding: 30px;
+    }
+
+    .burger-info h3 {
+      font-family: "Anton", sans-serif;
+      font-size: 40px;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .burger-info p {
+      color: var(--gray);
+      margin: 12px 0 25px;
+      max-width: 500px;
+    }
+
+    .burger-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .small-order {
+      background: var(--red);
+      padding: 12px 20px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 3px;
+      transition: 0.2s;
+    }
+
+    .small-order:hover {
+      background: #ff252d;
+    }
+
+    /* =========================
+       STORY
+    ========================= */
+
+    .story {
+      background: var(--red);
+    }
+
+    .story .section-label {
+      color: white;
+    }
+
+    .story-content {
+      max-width: 850px;
+    }
+
+    .story h2 {
+      font-family: "Anton", sans-serif;
+      font-size: clamp(58px, 8vw, 110px);
+      line-height: 0.88;
+      text-transform: uppercase;
+    }
+
+    .story p {
+      margin-top: 30px;
+      font-size: 19px;
+      max-width: 650px;
+      color: #fff;
+    }
+
+    /* =========================
+       LOCATION
+    ========================= */
+
+    .location {
+      background: var(--dark);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 55px;
+    }
+
+    .location-box {
+      border: 1px solid var(--border);
+      padding: 35px;
+      background: #111;
+    }
+
+    .location-box h3 {
+      font-size: 17px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .location-box p {
+      color: var(--gray);
+    }
+
+    .location-button {
+      display: inline-block;
+      margin-top: 20px;
+      background: var(--red);
+      padding: 13px 20px;
+      border-radius: 3px;
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      text-align: center;
+      background: #050505;
+    }
+
+    .cta h2 {
+      font-family: "Anton", sans-serif;
+      font-size: clamp(60px, 9vw, 120px);
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .cta h2 span {
+      color: var(--red);
+    }
+
+    .cta p {
+      color: var(--gray);
+      max-width: 550px;
+      margin: 25px auto 35px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 50px 0 30px;
+      border-top: 1px solid var(--border);
+      background: #050505;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      font-family: "Anton", sans-serif;
+      font-size: 48px;
+      letter-spacing: 3px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .copyright {
+      margin-top: 35px;
+      color: #666;
+      font-size: 12px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 750px) {
+
+      nav {
+        padding: 17px 0;
+      }
+
+      .logo {
+        font-size: 31px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 92vh;
+      }
+
+      .hero-content {
+        padding-top: 70px;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .why-grid,
+      .menu-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-card {
+        padding: 35px 28px;
+      }
+
+      .burger-image {
+        height: 270px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .story p {
+        font-size: 17px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav>
+    <div class="container nav-inner">
+
+      <a href="#" class="logo">ZARR</a>
+
+      <div class="nav-links">
+
+        <a href="#menu">Menu</a>
+
+        <a href="#story">Our Story</a>
+
+        <a href="#location">Location</a>
+
+        <!-- CHANGE PHONE NUMBER HERE -->
+        <a
+          href="https://wa.me/923XXXXXXXXX"
+          class="nav-order"
+        >
+          Order Now
+        </a>
+
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          Shahdara · Lahore
+        </div>
+
+        <h1>
+          FIRE<br>
+          GRILLED<br>
+          <span>BEEF.</span>
+        </h1>
+
+        <p class="hero-text">
+          Big flavor. Real fire. No shortcuts.
+          ZARR brings seriously bold beef burgers
+          to Shahdara, Lahore.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#menu" class="primary-btn">
+            View Menu
+          </a>
+
+          <a href="#story" class="secondary-btn">
+            Our Story
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       WHY ZARR
+  ========================= -->
+
+  <section class="why">
+
+    <div class="container">
+
+      <div class="section-label">
+        The ZARR Standard
+      </div>
+
+      <div class="section-title">
+        Built Around<br>
+        The Fire
+      </div>
+
+      <div class="why-grid">
+
+        <div class="why-card">
+
+          <div class="why-number">01</div>
+
+          <h3>Fire Grilled</h3>
+
+          <p>
+            Beef cooked over real fire for a deeper,
+            smoky flavor and unmistakable char.
+          </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+          <div class="why-number">02</div>
+
+          <h3>Fresh</h3>
+
+          <p>
+            Quality ingredients prepared with
+            attention to every burger.
+          </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+          <div class="why-number">03</div>
+
+          <h3>Bold</h3>
+
+          <p>
+            Big flavors designed for people
+            who want more from their burger.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MENU
+  ========================= -->
+
+  <section id="menu">
+
+    <div class="container">
+
+      <div class="section-label">
+        Our Menu
+      </div>
+
+      <div class="section-title">
+        Pick Your<br>
+        ZARR
+      </div>
+
+
+      <div class="menu-grid">
+
+
+        <!-- BURGER 1 -->
+
+        <div class="burger-card">
+
+          <div class="burger-image">
+            Burger Photo
+          </div>
+
+          <div class="burger-info">
+
+            <h3>ZARR Classic</h3>
+
+            <p>
+              Fire-grilled beef, fresh toppings
+              and our signature ZARR flavor.
+            </p>
+
+            <div class="burger-bottom">
+
+              <div class="price">
+                Rs. XXX
+              </div>
+
+              <!-- CHANGE PHONE NUMBER HERE -->
+
+              <a
+                class="small-order"
+                href="https://wa.me/923XXXXXXXXX?text=Hi%20ZARR!%20I%20want%20to%20order%20the%20ZARR%20Classic."
+              >
+                Order
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- BURGER 2 -->
+
+        <div class="burger-card">
+
+          <div class="burger-image">
+            Burger Photo
+          </div>
+
+          <div class="burger-info">
+
+            <h3>ZARR Signature</h3>
+
+            <p>
+              A bigger, bolder fire-grilled
+              burger built for serious cravings.
+            </p>
+
+            <div class="burger-bottom">
+
+              <div class="price">
+                Rs. XXX
+              </div>
+
+              <!-- CHANGE PHONE NUMBER HERE -->
+
+              <a
+                class="small-order"
+                href="https://wa.me/923XXXXXXXXX?text=Hi%20ZARR!%20I%20want%20to%20order%20the%20ZARR%20Signature."
+              >
+                Order
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       STORY
+  ========================= -->
+
+  <section id="story" class="story">
+
+    <div class="container">
+
+      <div class="story-content">
+
+        <div class="section-label">
+          Our Story
+        </div>
+
+        <h2>
+          Made For<br>
+          Serious<br>
+          Burger People.
+        </h2>
+
+        <p>
+          ZARR started with a simple idea:
+          make a burger that tastes like it was
+          made with fire, not shortcuts.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       LOCATION
+  ========================= -->
+
+  <section id="location" class="location">
+
+    <div class="container">
+
+      <div class="section-label">
+        Find ZARR
+      </div>
+
+      <div class="section-title">
+        Come Hungry.
+      </div>
+
+
+      <div class="location-grid">
+
+
+        <div class="location-box">
+
+          <h3>Location</h3>
+
+          <p>
+            Shahdara, Lahore, Pakistan
+          </p>
+
+        </div>
+
+
+        <div class="location-box">
+
+          <h3>Order Direct</h3>
+
+          <p>
+            Order directly through WhatsApp.
+          </p>
+
+          <!-- CHANGE PHONE NUMBER HERE -->
+
+          <a
+            href="https://wa.me/923XXXXXXXXX"
+            class="location-button"
+          >
+            WhatsApp ZARR
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CTA
+  ========================= -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>
+        COME<br>
+        <span>HUNGRY.</span>
+      </h2>
+
+      <p>
+        Fire-grilled beef. Fresh ingredients.
+        Serious flavor.
+      </p>
+
+      <!-- CHANGE PHONE NUMBER HERE -->
+
+      <a
+        href="https://wa.me/923XXXXXXXXX"
+        class="primary-btn"
+      >
+        Order ZARR
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-inner">
+
+        <div class="footer-logo">
+          ZARR
+        </div>
+
+        <div class="footer-links">
+
+          <a href="#menu">Menu</a>
+
+          <a href="#story">Our Story</a>
+
+          <a href="#location">Location</a>
+
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © 2026 ZARR. Fire-grilled beef burgers.
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

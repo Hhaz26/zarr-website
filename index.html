@@ -4,53 +4,54 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>BURN — Grilled Beef Burgers in Shahdara Lahore</title>
+  <title>BURN — Grilled Beef Burgers in Shahdara, Lahore</title>
 
   <meta
     name="description"
-    content="BURN serves juicy grilled beef burgers in Shahdara, Lahore. Single burgers from Rs. 499 and Double burgers for Rs. 799. Order directly on WhatsApp."
+    content="BURN serves bold grilled beef burgers in Shahdara, Lahore. Choose Single for Rs. 499 or Double for Rs. 799. Order directly on WhatsApp."
   />
 
   <meta
     name="keywords"
-    content="BURN burgers, burgers Shahdara, beef burgers Shahdara, grilled beef burgers Lahore, burgers Lahore, burger delivery Shahdara"
+    content="burger Shahdara, burgers in Shahdara Lahore, beef burger Shahdara, burger delivery Shahdara, grilled beef burger Lahore, burgers Lahore"
   />
 
   <meta name="theme-color" content="#101010" />
 
+  <!-- Open Graph -->
   <meta property="og:title" content="BURN — Grilled Beef Burgers" />
   <meta
     property="og:description"
-    content="Juicy grilled beef. Bold flavor. BORN TO GRILL."
+    content="Bold grilled beef burgers from Rs. 499. Order BURN directly on WhatsApp."
   />
   <meta property="og:type" content="restaurant" />
 
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
 
   <style>
-
     :root {
       --black: #101010;
-      --red: #C9281D;
-      --ember: #8F1D16;
-      --cream: #F7F1E7;
-      --yellow: #F2B632;
-      --white: #FFFFFF;
-      --gray: #77736D;
-      --border: rgba(16,16,16,.12);
-      --max-width: 1200px;
+      --black-2: #171717;
+      --red: #d92d20;
+      --red-dark: #9f2119;
+      --cream: #f7f1e7;
+      --white: #ffffff;
+      --yellow: #f2b632;
+      --gray: #77736d;
+      --border: rgba(16, 16, 16, 0.12);
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -62,7 +63,6 @@
       background: var(--cream);
       color: var(--black);
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
     img {
@@ -75,9 +75,21 @@
       text-decoration: none;
     }
 
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
     .container {
-      width: min(92%, var(--max-width));
+      width: min(1180px, calc(100% - 40px));
       margin: auto;
+    }
+
+    .display {
+      font-family: "Anton", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 0.95;
     }
 
     /* =========================
@@ -85,67 +97,66 @@
     ========================= */
 
     header {
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 1000;
-      background: rgba(16,16,16,.95);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      z-index: 20;
+      color: white;
     }
 
     .nav {
-      height: 78px;
+      height: 84px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
     }
 
     .logo {
-      color: var(--white);
-      font-size: 31px;
-      font-weight: 900;
-      letter-spacing: -2px;
-      line-height: 1;
+      font-family: "Anton", sans-serif;
+      font-size: 42px;
+      letter-spacing: -1px;
+      line-height: 0.8;
     }
 
     .logo span {
-      color: var(--red);
-    }
-
-    .logo small {
       display: block;
-      font-size: 7px;
-      letter-spacing: 2.5px;
-      margin-top: 5px;
+      font-family: "Poppins", sans-serif;
+      font-size: 9px;
+      letter-spacing: 3px;
       font-weight: 700;
+      text-align: center;
+      margin-top: 6px;
     }
 
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 30px;
-      color: rgba(255,255,255,.8);
       font-size: 13px;
       font-weight: 600;
     }
 
+    .nav-links a {
+      transition: opacity 0.2s ease;
+    }
+
     .nav-links a:hover {
-      color: white;
+      opacity: 0.7;
     }
 
     .nav-order {
       background: var(--red);
       color: white;
-      padding: 13px 20px;
+      padding: 13px 22px;
       border-radius: 999px;
-      font-size: 12px;
       font-weight: 800;
+      font-size: 13px;
+      transition: transform 0.2s ease;
     }
 
     .nav-order:hover {
-      background: var(--ember);
+      transform: translateY(-2px);
     }
 
     /* =========================
@@ -153,313 +164,302 @@
     ========================= */
 
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 78px;
-      color: white;
-
+      min-height: 720px;
+      position: relative;
+      overflow: hidden;
       background:
         linear-gradient(
           90deg,
-          rgba(16,16,16,.97),
-          rgba(16,16,16,.78),
-          rgba(16,16,16,.2)
+          rgba(0,0,0,0.94) 0%,
+          rgba(0,0,0,0.78) 42%,
+          rgba(0,0,0,0.2) 100%
         ),
-        url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=2000&q=90")
-        center/cover;
+        url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
+      color: white;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at 80% 50%,
+        rgba(255, 69, 31, 0.18),
+        transparent 40%
+      );
+      pointer-events: none;
     }
 
     .hero-content {
-      max-width: 720px;
-      padding: 80px 0;
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--yellow);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 30px;
-      height: 2px;
-      background: var(--red);
+      position: relative;
+      z-index: 2;
+      padding-top: 210px;
+      padding-bottom: 90px;
+      max-width: 620px;
     }
 
     .hero h1 {
-      font-size: clamp(52px, 8vw, 100px);
-      line-height: .92;
-      letter-spacing: -5px;
-      font-weight: 900;
-      text-transform: uppercase;
+      font-size: clamp(78px, 10vw, 145px);
     }
 
     .hero h1 span {
       color: var(--red);
     }
 
-    .hero-description {
-      max-width: 560px;
-      margin-top: 28px;
-      color: rgba(255,255,255,.78);
-      font-size: 17px;
+    .hero-subtitle {
+      font-size: 19px;
+      letter-spacing: 6px;
+      font-weight: 700;
+      margin-top: 18px;
     }
 
     .hero-price {
-      margin-top: 20px;
-      font-size: 14px;
-      font-weight: 700;
-      color: white;
+      font-size: 36px;
+      margin-top: 4px;
+      font-weight: 800;
     }
 
-    .hero-price strong {
+    .hero-price span {
       color: var(--yellow);
-      font-size: 18px;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+      gap: 14px;
       margin-top: 32px;
+      flex-wrap: wrap;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 54px;
-      padding: 0 28px;
+      min-height: 52px;
+      padding: 0 27px;
       border-radius: 999px;
-      font-size: 13px;
       font-weight: 800;
-      transition: .2s ease;
+      font-size: 13px;
+      transition: all 0.2s ease;
     }
 
-    .btn-primary {
+    .btn-red {
       background: var(--red);
       color: white;
     }
 
-    .btn-primary:hover {
-      background: var(--ember);
+    .btn-red:hover {
+      background: #ef382a;
       transform: translateY(-2px);
     }
 
-    .btn-light {
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.7);
+      color: white;
+    }
+
+    .btn-outline:hover {
       background: white;
       color: var(--black);
     }
 
-    .btn-light:hover {
-      transform: translateY(-2px);
-    }
-
-    .hero-note {
-      margin-top: 20px;
-      font-size: 11px;
-      color: rgba(255,255,255,.55);
-    }
-
-    /* =========================
-       GENERAL SECTIONS
-    ========================= */
-
-    section {
-      padding: 100px 0;
-    }
-
-    .section-header {
+    .hero-meta {
       display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 30px;
-      margin-bottom: 45px;
+      gap: 24px;
+      margin-top: 40px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      flex-wrap: wrap;
     }
 
-    .section-label {
-      color: var(--red);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .section-title {
-      font-size: clamp(38px, 5vw, 62px);
-      line-height: .98;
-      letter-spacing: -2.5px;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    .section-description {
-      max-width: 450px;
-      color: var(--gray);
-      font-size: 14px;
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     /* =========================
-       BURGERS
+       MENU
     ========================= */
 
-    .burgers {
+    .menu-section {
+      padding: 100px 0;
       background: var(--cream);
     }
 
-    .burger-grid {
+    .menu-grid {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 22px;
+      grid-template-columns: 0.7fr 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .menu-intro {
+      padding: 30px 20px 30px 0;
+    }
+
+    .eyebrow {
+      color: var(--red);
+      font-size: 12px;
+      letter-spacing: 5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .menu-intro h2 {
+      font-size: clamp(55px, 7vw, 88px);
+    }
+
+    .menu-intro p {
+      margin-top: 20px;
+      max-width: 270px;
+      color: #4d4a45;
+      font-size: 14px;
     }
 
     .burger-card {
       background: white;
-      border-radius: 20px;
+      border-radius: 16px;
       overflow: hidden;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
       border: 1px solid var(--border);
-      transition: .25s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .burger-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 50px rgba(16,16,16,.1);
+      transform: translateY(-7px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.14);
     }
 
     .burger-image {
-      height: 310px;
+      height: 280px;
       overflow: hidden;
-      position: relative;
     }
 
     .burger-image img {
       height: 100%;
       object-fit: cover;
-      transition: .5s ease;
+      transition: transform 0.5s ease;
     }
 
-    .burger-card:hover img {
-      transform: scale(1.05);
+    .burger-card:hover .burger-image img {
+      transform: scale(1.04);
     }
 
-    .popular {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      z-index: 2;
-      background: var(--red);
-      color: white;
-      padding: 7px 11px;
-      border-radius: 999px;
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 1px;
+    .burger-content {
+      padding: 23px;
     }
 
-    .burger-info {
-      padding: 24px;
+    .burger-content h3 {
+      font-size: 32px;
     }
 
-    .burger-info h3 {
-      font-size: 25px;
-      line-height: 1;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: -.8px;
-    }
-
-    .burger-info p {
-      margin-top: 10px;
-      min-height: 48px;
-      color: var(--gray);
+    .burger-content p {
+      color: #666;
       font-size: 13px;
-    }
-
-    .burger-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 20px;
+      min-height: 46px;
+      margin-top: 7px;
     }
 
     .price {
-      font-size: 19px;
-      font-weight: 900;
-    }
-
-    .small-order {
-      background: var(--black);
-      color: white;
-      padding: 11px 16px;
-      border-radius: 999px;
-      font-size: 10px;
+      color: var(--red);
+      font-size: 25px;
       font-weight: 800;
-      text-transform: uppercase;
+      margin: 8px 0 15px;
     }
 
-    .small-order:hover {
+    .card-btn {
+      width: 100%;
       background: var(--red);
+      color: white;
+      min-height: 46px;
+      border-radius: 999px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 800;
+      font-size: 12px;
+      transition: background 0.2s ease;
+    }
+
+    .card-btn:hover {
+      background: var(--red-dark);
     }
 
     /* =========================
        WHY BURN
     ========================= */
 
-    .why {
+    .why-section {
       background: var(--black);
       color: white;
+      padding: 90px 0;
+      position: relative;
+      overflow: hidden;
     }
 
-    .why .section-label {
-      color: var(--yellow);
-    }
-
-    .why .section-description {
-      color: rgba(255,255,255,.58);
+    .why-section::after {
+      content: "";
+      position: absolute;
+      right: -180px;
+      top: -180px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(217,45,32,0.35),
+        transparent 65%
+      );
     }
 
     .why-grid {
+      position: relative;
+      z-index: 2;
       display: grid;
-      grid-template-columns: repeat(4,1fr);
-      border-top: 1px solid rgba(255,255,255,.14);
-      border-bottom: 1px solid rgba(255,255,255,.14);
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: center;
     }
 
-    .why-item {
-      padding: 34px 25px 34px 0;
-      margin-right: 25px;
-      border-right: 1px solid rgba(255,255,255,.14);
+    .why-title h2 {
+      font-size: clamp(60px, 7vw, 100px);
     }
 
-    .why-item:last-child {
-      border-right: 0;
+    .why-title p {
+      margin-top: 20px;
+      color: #bdbdbd;
+      max-width: 340px;
+      font-size: 14px;
     }
 
-    .why-number {
-      color: var(--red);
-      font-size: 12px;
-      font-weight: 800;
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
 
-    .why-item h3 {
-      margin-top: 28px;
-      font-size: 22px;
-      font-weight: 900;
+    .feature {
+      border-left: 1px solid rgba(255,255,255,0.25);
+      padding-left: 20px;
+    }
+
+    .feature-icon {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      font-size: 14px;
       text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .why-item p {
-      margin-top: 9px;
-      color: rgba(255,255,255,.56);
+    .feature p {
+      margin-top: 8px;
+      color: #aaa;
       font-size: 12px;
     }
 
@@ -468,76 +468,57 @@
     ========================= */
 
     .combo {
-      background: var(--red);
+      min-height: 400px;
       color: white;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(145,23,17,0.97),
+          rgba(190,38,27,0.82)
+        ),
+        url("https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=1800&q=85")
+        center / cover;
     }
 
-    .combo-inner {
+    .combo-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      gap: 60px;
     }
 
     .combo-image {
-      height: 500px;
-      border-radius: 24px;
-      overflow: hidden;
+      min-height: 400px;
+      background:
+        url("https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=1100&q=90")
+        center / cover;
     }
 
-    .combo-image img {
-      height: 100%;
-      object-fit: cover;
+    .combo-content {
+      padding: 70px;
     }
 
-    .combo .section-label {
+    .combo-content .eyebrow {
       color: var(--yellow);
     }
 
-    .combo h2 {
-      font-size: clamp(48px,6vw,80px);
-      line-height: .92;
-      letter-spacing: -4px;
-      font-weight: 900;
-      text-transform: uppercase;
+    .combo-content h2 {
+      font-size: clamp(45px, 6vw, 75px);
     }
 
-    .combo-copy {
-      margin-top: 22px;
-      max-width: 470px;
-      color: rgba(255,255,255,.78);
+    .combo-content p {
+      margin: 18px 0 25px;
       font-size: 15px;
     }
 
-    .combo-list {
-      margin-top: 28px;
-      display: grid;
-      gap: 12px;
-    }
-
-    .combo-list div {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .combo-list span {
-      width: 23px;
-      height: 23px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .btn-white {
       background: white;
-      color: var(--red);
-      border-radius: 50%;
-      font-size: 11px;
-      font-weight: 900;
+      color: var(--black);
     }
 
-    .combo .btn {
-      margin-top: 32px;
+    .btn-white:hover {
+      transform: translateY(-2px);
     }
 
     /* =========================
@@ -545,86 +526,102 @@
     ========================= */
 
     .reviews {
-      background: white;
+      padding: 90px 0;
+      background: var(--cream);
+    }
+
+    .reviews-header {
+      display: grid;
+      grid-template-columns: 0.7fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 35px;
+    }
+
+    .reviews-header h2 {
+      font-size: clamp(55px, 7vw, 90px);
+    }
+
+    .reviews-header p {
+      color: #666;
+      font-size: 14px;
+      max-width: 350px;
     }
 
     .review-grid {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
     .review {
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
+      background: white;
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
     }
 
     .stars {
-      color: var(--red);
-      letter-spacing: 3px;
+      color: var(--yellow);
+      letter-spacing: 2px;
+      margin-bottom: 15px;
     }
 
     .review p {
-      margin-top: 20px;
-      font-size: 14px;
-      line-height: 1.8;
+      font-size: 13px;
+      color: #555;
     }
 
-    .review-author {
-      margin-top: 22px;
+    .review strong {
+      display: block;
+      margin-top: 20px;
       font-size: 11px;
-      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     /* =========================
        LOCATION
     ========================= */
 
-    .location {
-      background: var(--cream);
-    }
-
-    .location-grid {
+    .location-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      min-height: 500px;
     }
 
-    .location-card {
+    .location-image {
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.35),
+          rgba(0,0,0,0.55)
+        ),
+        url("https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1600&q=90")
+        center / cover;
+    }
+
+    .location-content {
       background: var(--black);
       color: white;
-      padding: 42px;
-      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      padding: 70px;
     }
 
-    .location-card.light {
-      background: white;
-      color: var(--black);
-      border: 1px solid var(--border);
+    .location-content h2 {
+      font-size: clamp(60px, 7vw, 90px);
     }
 
-    .location-card h3 {
-      font-size: 30px;
-      line-height: 1;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    .location-card p {
-      margin-top: 15px;
-      color: rgba(255,255,255,.58);
-      font-size: 13px;
-    }
-
-    .location-card.light p {
-      color: var(--gray);
-    }
-
-    .location-detail {
+    .location-address {
       margin-top: 25px;
-      font-size: 14px;
-      font-weight: 700;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .location-copy {
+      margin-top: 8px;
+      color: #aaa;
+      font-size: 13px;
     }
 
     /* =========================
@@ -632,18 +629,13 @@
     ========================= */
 
     .final-cta {
+      padding: 85px 20px;
       background: var(--cream);
       text-align: center;
-      padding: 120px 0;
-      border-top: 1px solid var(--border);
     }
 
     .final-cta h2 {
-      font-size: clamp(55px,10vw,120px);
-      line-height: .85;
-      letter-spacing: -6px;
-      font-weight: 900;
-      text-transform: uppercase;
+      font-size: clamp(65px, 9vw, 120px);
     }
 
     .final-cta h2 span {
@@ -651,9 +643,9 @@
     }
 
     .final-cta p {
-      max-width: 500px;
-      margin: 25px auto 0;
-      color: var(--gray);
+      color: #666;
+      margin: 20px auto 28px;
+      max-width: 450px;
       font-size: 14px;
     }
 
@@ -664,106 +656,106 @@
     footer {
       background: var(--black);
       color: white;
-      padding: 55px 0 90px;
+      padding: 35px 0;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 50px;
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
     }
 
-    .footer-brand .logo {
-      font-size: 42px;
+    .footer-logo {
+      font-family: "Anton", sans-serif;
+      font-size: 35px;
     }
 
-    .footer-brand p {
-      margin-top: 15px;
-      color: rgba(255,255,255,.5);
-      max-width: 350px;
-      font-size: 12px;
-    }
-
-    .footer-column h4 {
-      color: var(--yellow);
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .footer-column a {
+    .footer-logo span {
+      font-family: "Poppins", sans-serif;
+      font-size: 8px;
+      letter-spacing: 3px;
       display: block;
-      margin-top: 12px;
-      color: rgba(255,255,255,.7);
-      font-size: 12px;
+      text-align: center;
     }
 
-    .footer-bottom {
-      margin-top: 50px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,.1);
-      color: rgba(255,255,255,.35);
-      font-size: 10px;
+    .footer-copy {
+      color: #888;
+      font-size: 11px;
     }
 
     /* =========================
-       MOBILE ORDER BAR
+       MOBILE STICKY ORDER
     ========================= */
 
     .mobile-order {
       display: none;
       position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 2000;
-      padding: 10px;
-      background: rgba(16,16,16,.96);
-      backdrop-filter: blur(12px);
-    }
-
-    .mobile-order a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 100;
       background: var(--red);
       color: white;
-      border-radius: 12px;
-      font-size: 12px;
-      font-weight: 900;
-      text-transform: uppercase;
+      border-radius: 999px;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.3);
     }
 
     /* =========================
        RESPONSIVE
     ========================= */
 
-    @media (max-width:900px) {
+    @media (max-width: 950px) {
 
       .nav-links {
         display: none;
       }
 
-      .burger-grid {
+      .hero {
+        min-height: 690px;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(0,0,0,0.92),
+            rgba(0,0,0,0.5)
+          ),
+          url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1800&q=90")
+          center / cover;
+      }
+
+      .menu-grid {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .menu-intro {
+        grid-column: 1 / -1;
       }
 
       .why-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
       }
 
-      .why-item:nth-child(2) {
-        border-right: 0;
+      .features {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .why-item:nth-child(3),
-      .why-item:nth-child(4) {
-        border-top: 1px solid rgba(255,255,255,.14);
+      .combo-grid {
+        grid-template-columns: 1fr;
       }
 
-      .combo-inner,
-      .location-grid {
+      .combo-image {
+        min-height: 350px;
+      }
+
+      .combo-content {
+        padding: 60px 40px;
+      }
+
+      .reviews-header {
         grid-template-columns: 1fr;
       }
 
@@ -771,132 +763,151 @@
         grid-template-columns: 1fr;
       }
 
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
+      .location-section {
+        grid-template-columns: 1fr;
+      }
+
+      .location-image {
+        min-height: 380px;
+      }
+
+      .location-content {
+        padding: 60px 40px;
       }
     }
 
-    @media (max-width:620px) {
+    @media (max-width: 650px) {
+
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .nav {
+        height: 72px;
+      }
+
+      .logo {
+        font-size: 35px;
+      }
+
+      .nav-order {
+        padding: 10px 16px;
+        font-size: 11px;
+      }
+
+      .hero {
+        min-height: 650px;
+      }
+
+      .hero-content {
+        padding-top: 150px;
+      }
+
+      .hero h1 {
+        font-size: 75px;
+      }
+
+      .hero-subtitle {
+        font-size: 13px;
+        letter-spacing: 3px;
+      }
+
+      .hero-price {
+        font-size: 27px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-meta {
+        gap: 12px;
+      }
+
+      .menu-section {
+        padding: 65px 0;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-intro {
+        grid-column: auto;
+      }
+
+      .menu-intro h2 {
+        font-size: 62px;
+      }
+
+      .burger-image {
+        height: 250px;
+      }
+
+      .features {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .feature {
+        padding-left: 13px;
+      }
+
+      .combo-image {
+        min-height: 280px;
+      }
+
+      .combo-content {
+        padding: 50px 25px;
+      }
+
+      .combo-content h2 {
+        font-size: 52px;
+      }
+
+      .location-image {
+        min-height: 300px;
+      }
+
+      .location-content {
+        padding: 55px 25px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .mobile-order {
+        display: flex;
+      }
 
       body {
         padding-bottom: 70px;
       }
-
-      .nav {
-        height: 68px;
-      }
-
-      .logo {
-        font-size: 27px;
-      }
-
-      .nav-order {
-        padding: 11px 16px;
-      }
-
-      .hero {
-        min-height: 92vh;
-
-        background:
-          linear-gradient(
-            180deg,
-            rgba(16,16,16,.45),
-            rgba(16,16,16,.95) 75%
-          ),
-          url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=85")
-          center/cover;
-      }
-
-      .hero h1 {
-        font-size: clamp(50px,16vw,76px);
-        letter-spacing: -3px;
-      }
-
-      .hero-description {
-        font-size: 14px;
-      }
-
-      .hero-buttons {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      section {
-        padding: 75px 0;
-      }
-
-      .section-header {
-        display: block;
-      }
-
-      .section-description {
-        margin-top: 18px;
-      }
-
-      .burger-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .burger-image {
-        height: 330px;
-      }
-
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .why-item {
-        border-right: 0;
-        border-bottom: 1px solid rgba(255,255,255,.14);
-        margin-right: 0;
-      }
-
-      .why-item:last-child {
-        border-bottom: 0;
-      }
-
-      .why-item:nth-child(3),
-      .why-item:nth-child(4) {
-        border-top: 0;
-      }
-
-      .combo-inner {
-        gap: 35px;
-      }
-
-      .combo-image {
-        height: 360px;
-      }
-
-      .location-card {
-        padding: 30px;
-      }
-
-      .final-cta {
-        padding: 90px 0;
-      }
-
-      .final-cta h2 {
-        letter-spacing: -4px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .mobile-order {
-        display: block;
-      }
     }
-
   </style>
-</head>
 
+  <!-- Restaurant Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "BURN — Grilled Beef Burgers",
+    "description": "BURN serves grilled beef burgers in Shahdara, Lahore.",
+    "servesCuisine": "Burgers",
+    "priceRange": "Rs. 499 - Rs. 799",
+    "telephone": "+923184644493",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Shahdara",
+      "addressLocality": "Lahore",
+      "addressCountry": "PK"
+    },
+    "hasMenu": "#menu"
+  }
+  </script>
+</head>
 
 <body>
 
@@ -905,24 +916,24 @@
   ========================= -->
 
   <header>
-
     <div class="container nav">
 
       <a href="#" class="logo">
-        B<span>U</span>RN
-        <small>GRILLED BEEF BURGERS</small>
+        BURN
+        <span>GRILLED BEEF BURGERS</span>
       </a>
 
       <nav class="nav-links">
-        <a href="#burgers">Burgers</a>
-        <a href="#why">Why BURN</a>
-        <a href="#combos">Combos</a>
+        <a href="#menu">Menu</a>
+        <a href="#why-burn">Why BURN</a>
+        <a href="#combo">Combos</a>
         <a href="#reviews">Reviews</a>
+        <a href="#location">Location</a>
       </nav>
 
       <a
         class="nav-order"
-        href="https://wa.me/923184644493?text=Hi%20BURN!%20I'd%20like%20to%20place%20an%20order."
+        href="https://wa.me/923184644493?text=Hi%20BURN,%20I%20want%20to%20place%20an%20order."
         target="_blank"
         rel="noopener"
       >
@@ -930,7 +941,6 @@
       </a>
 
     </div>
-
   </header>
 
 
@@ -938,626 +948,489 @@
        HERO
   ========================= -->
 
-  <main>
+  <section class="hero">
 
-    <section class="hero">
+    <div class="container hero-content">
 
-      <div class="container">
+      <h1 class="display">
+        BORN<br />
+        TO <span>GRILL.</span>
+      </h1>
 
-        <div class="hero-content">
+      <div class="hero-subtitle">
+        GRILLED BEEF BURGERS
+      </div>
+
+      <div class="hero-price">
+        FROM <span>RS. 499</span>
+      </div>
+
+      <div class="hero-buttons">
+
+        <a
+          class="btn btn-red"
+          href="https://wa.me/923184644493?text=Hi%20BURN,%20I%20want%20to%20place%20an%20order."
+          target="_blank"
+          rel="noopener"
+        >
+          ORDER ON WHATSAPP
+        </a>
+
+        <a class="btn btn-outline" href="#menu">
+          VIEW MENU
+        </a>
+
+      </div>
+
+      <div class="hero-meta">
+
+        <span>
+          DELIVERY & PICKUP
+        </span>
+
+        <span>
+          SHAH DARA, LAHORE
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MENU
+  ========================= -->
+
+  <section class="menu-section" id="menu">
+
+    <div class="container">
+
+      <div class="menu-grid">
+
+        <div class="menu-intro">
 
           <div class="eyebrow">
-            GRILLED BEEF BURGERS
+            OUR MENU
           </div>
 
-          <h1>
-            BORN<br>
-            TO <span>GRILL.</span>
-          </h1>
+          <h2 class="display">
+            THE<br />
+            BURGERS.
+          </h2>
 
-          <p class="hero-description">
-            Juicy grilled beef. Toasted buns. Bold sauces.
-            No nonsense. Just the kind of burger you start
-            thinking about before you're even hungry.
+          <p>
+            Simple. Bold. Grilled to perfection.
+            Two burgers. All flavor.
           </p>
 
-          <div class="hero-price">
-            GRILLED BEEF BURGERS FROM
-            <strong>RS. 499</strong>
+        </div>
+
+
+        <!-- SINGLE -->
+
+        <article class="burger-card">
+
+          <div class="burger-image">
+            <img
+              src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1100&q=90"
+              alt="BURN Single grilled beef burger"
+              loading="lazy"
+            />
           </div>
 
-          <div class="hero-buttons">
+          <div class="burger-content">
+
+            <h3 class="display">
+              SINGLE
+            </h3>
+
+            <p>
+              Juicy grilled beef, melted cheese,
+              fresh buns and signature sauce.
+            </p>
+
+            <div class="price">
+              RS. 499
+            </div>
 
             <a
-              class="btn btn-primary"
-              href="https://wa.me/923184644493?text=Hi%20BURN!%20I'd%20like%20to%20place%20an%20order."
+              class="card-btn"
+              href="https://wa.me/923184644493?text=Hi%20BURN,%20I%20want%20to%20order%20the%20Single%20Burger%20for%20Rs.%20499."
               target="_blank"
               rel="noopener"
             >
-              ORDER NOW
-            </a>
-
-            <a class="btn btn-light" href="#burgers">
-              VIEW MENU
+              ORDER SINGLE
             </a>
 
           </div>
 
-          <div class="hero-note">
-            SHAH DARA · LAHORE · DELIVERY & PICKUP
+        </article>
+
+
+        <!-- DOUBLE -->
+
+        <article class="burger-card">
+
+          <div class="burger-image">
+            <img
+              src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=1100&q=90"
+              alt="BURN Double grilled beef burger"
+              loading="lazy"
+            />
           </div>
 
-        </div>
+          <div class="burger-content">
+
+            <h3 class="display">
+              DOUBLE
+            </h3>
+
+            <p>
+              Double grilled beef. Double cheese.
+              Double the reason to order.
+            </p>
+
+            <div class="price">
+              RS. 799
+            </div>
+
+            <a
+              class="card-btn"
+              href="https://wa.me/923184644493?text=Hi%20BURN,%20I%20want%20to%20order%20the%20Double%20Burger%20for%20Rs.%20799."
+              target="_blank"
+              rel="noopener"
+            >
+              ORDER DOUBLE
+            </a>
+
+          </div>
+
+        </article>
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
-    <!-- =========================
-         BURGERS
-    ========================= -->
+  <!-- =========================
+       WHY BURN
+  ========================= -->
 
-    <section class="burgers" id="burgers">
+  <section class="why-section" id="why-burn">
 
-      <div class="container">
+    <div class="container why-grid">
 
-        <div class="section-header">
+      <div class="why-title">
 
-          <div>
+        <div class="eyebrow">
+          WHY BURN
+        </div>
 
-            <div class="section-label">
-              THE MENU
-            </div>
+        <h2 class="display">
+          GRILLED.<br />
+          NOT BORING.
+        </h2>
 
-            <h2 class="section-title">
-              MEET THE<br>
-              BURGERS.
-            </h2>
+        <p>
+          Real ingredients. Big flavor.
+          That's the BURN way.
+        </p>
 
+      </div>
+
+
+      <div class="features">
+
+        <div class="feature">
+
+          <div class="feature-icon">
+            ◉
           </div>
 
-          <p class="section-description">
-            A tight menu built around grilled beef,
-            bold flavors and serious cravings.
+          <h3>
+            Grilled Beef
+          </h3>
+
+          <p>
+            The burger starts with the beef.
           </p>
 
         </div>
 
 
-        <div class="burger-grid">
+        <div class="feature">
 
-
-          <!-- THE BURN -->
-
-          <article class="burger-card">
-
-            <div class="burger-image">
-
-              <span class="popular">
-                SIGNATURE
-              </span>
-
-              <img
-                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=85"
-                alt="BURN grilled beef burger"
-                loading="lazy"
-              >
-
-            </div>
-
-            <div class="burger-info">
-
-              <h3>
-                THE BURN
-              </h3>
-
-              <p>
-                Juicy grilled beef, melted cheese,
-                toasted bun and signature sauce.
-              </p>
-
-              <div class="burger-bottom">
-
-                <div class="price">
-                  Rs. 499
-                </div>
-
-                <a
-                  class="small-order"
-                  href="https://wa.me/923184644493?text=Hi%20BURN!%20I'd%20like%20to%20order%20The%20Burn%20for%20Rs.%20499."
-                  target="_blank"
-                  rel="noopener"
-                >
-                  ORDER
-                </a>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-          <!-- THE ORIGINAL -->
-
-          <article class="burger-card">
-
-            <div class="burger-image">
-
-              <img
-                src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1000&q=85"
-                alt="BURN original grilled beef burger"
-                loading="lazy"
-              >
-
-            </div>
-
-            <div class="burger-info">
-
-              <h3>
-                THE ORIGINAL
-              </h3>
-
-              <p>
-                Classic grilled beef, fresh bun and
-                house sauce. Simple. Proper.
-              </p>
-
-              <div class="burger-bottom">
-
-                <div class="price">
-                  Rs. 499
-                </div>
-
-                <a
-                  class="small-order"
-                  href="https://wa.me/923184644493?text=Hi%20BURN!%20I'd%20like%20to%20order%20The%20Original%20for%20Rs.%20499."
-                  target="_blank"
-                  rel="noopener"
-                >
-                  ORDER
-                </a>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-          <!-- DOUBLE BURN -->
-
-          <article class="burger-card">
-
-            <div class="burger-image">
-
-              <img
-                src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=1000&q=85"
-                alt="BURN double grilled beef burger"
-                loading="lazy"
-              >
-
-            </div>
-
-            <div class="burger-info">
-
-              <h3>
-                DOUBLE BURN
-              </h3>
-
-              <p>
-                Double grilled beef. Double cheese.
-                Double the reason to order another bite.
-              </p>
-
-              <div class="burger-bottom">
-
-                <div class="price">
-                  Rs. 799
-                </div>
-
-                <a
-                  class="small-order"
-                  href="https://wa.me/923184644493?text=Hi%20BURN!%20I'd%20like%20to%20order%20the%20Double%20Burn%20for%20Rs.%20799."
-                  target="_blank"
-                  rel="noopener"
-                >
-                  ORDER
-                </a>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         WHY BURN
-    ========================= -->
-
-    <section class="why" id="why">
-
-      <div class="container">
-
-        <div class="section-header">
-
-          <div>
-
-            <div class="section-label">
-              WHY BURN
-            </div>
-
-            <h2 class="section-title">
-              GRILLED.<br>
-              NOT BORING.
-            </h2>
-
+          <div class="feature-icon">
+            ▰
           </div>
 
-          <p class="section-description">
-            Product first. Bold flavor. Consistency over
-            complexity. That's the BURN way.
+          <h3>
+            Fresh Buns
+          </h3>
+
+          <p>
+            Soft inside. Toasted outside.
           </p>
 
         </div>
 
 
-        <div class="why-grid">
+        <div class="feature">
 
-          <div class="why-item">
-
-            <div class="why-number">
-              01
-            </div>
-
-            <h3>
-              Grilled Beef
-            </h3>
-
-            <p>
-              The burger starts with the beef.
-              Everything else follows.
-            </p>
-
+          <div class="feature-icon">
+            ◇
           </div>
 
+          <h3>
+            Bold Sauces
+          </h3>
 
-          <div class="why-item">
+          <p>
+            Big flavor without making it complicated.
+          </p>
 
-            <div class="why-number">
-              02
-            </div>
+        </div>
 
-            <h3>
-              Fresh Buns
-            </h3>
 
-            <p>
-              Soft inside. Toasted outside.
-              Built to hold the good stuff.
-            </p>
+        <div class="feature">
 
+          <div class="feature-icon">
+            ⚡
           </div>
 
+          <h3>
+            Fast Service
+          </h3>
 
-          <div class="why-item">
-
-            <div class="why-number">
-              03
-            </div>
-
-            <h3>
-              Bold Sauces
-            </h3>
-
-            <p>
-              Big flavor without making
-              the burger complicated.
-            </p>
-
-          </div>
-
-
-          <div class="why-item">
-
-            <div class="why-number">
-              04
-            </div>
-
-            <h3>
-              Fast Service
-            </h3>
-
-            <p>
-              You bring the craving.
-              We'll handle the grill.
-            </p>
-
-          </div>
+          <p>
+            You bring the craving. We handle the grill.
+          </p>
 
         </div>
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
-    <!-- =========================
-         COMBO
-    ========================= -->
+  <!-- =========================
+       COMBO
+  ========================= -->
 
-    <section class="combo" id="combos">
+  <section class="combo" id="combo">
 
-      <div class="container combo-inner">
+    <div class="combo-grid">
 
-        <div class="combo-image">
+      <div class="combo-image"></div>
 
-          <img
-            src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=1200&q=85"
-            alt="BURN burger combo with fries"
-            loading="lazy"
-          >
+      <div class="combo-content">
 
+        <div class="eyebrow">
+          MAKE IT A COMBO
         </div>
 
+        <h2 class="display">
+          BURGER +<br />
+          FRIES + DRINK
+        </h2>
+
+        <p>
+          The complete BURN experience.
+        </p>
+
+        <a
+          class="btn btn-white"
+          href="https://wa.me/923184644493?text=Hi%20BURN,%20I%20want%20to%20order%20a%20Burger%20Combo."
+          target="_blank"
+          rel="noopener"
+        >
+          ORDER A COMBO
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       REVIEWS
+  ========================= -->
+
+  <section class="reviews" id="reviews">
+
+    <div class="container">
+
+      <div class="reviews-header">
 
         <div>
 
-          <div class="section-label">
-            MAKE IT A COMBO
+          <div class="eyebrow">
+            REVIEWS
           </div>
 
-          <h2>
-            ONE<br>
-            MORE<br>
-            BITE.
+          <h2 class="display">
+            PEOPLE<br />
+            GET IT.
           </h2>
 
-          <p class="combo-copy">
-            Burger. Fries. Drink.
-            Dinner sorted without overthinking it.
-          </p>
+        </div>
 
-          <div class="combo-list">
+        <p>
+          Great burgers should leave you thinking
+          about the next one.
+        </p>
 
-            <div>
-              <span>✓</span>
-              Grilled Beef Burger
-            </div>
+      </div>
 
-            <div>
-              <span>✓</span>
-              BURN Fries
-            </div>
 
-            <div>
-              <span>✓</span>
-              Chilled Drink
-            </div>
+      <div class="review-grid">
 
+        <div class="review">
+
+          <div class="stars">
+            ★★★★★
           </div>
 
-          <a
-            class="btn btn-light"
-            href="https://wa.me/923184644493?text=Hi%20BURN!%20I'd%20like%20to%20order%20a%20combo."
-            target="_blank"
-            rel="noopener"
-          >
-            ORDER A COMBO
-          </a>
+          <p>
+            "Juicy beef, amazing sauce and the
+            burger actually tastes grilled."
+          </p>
+
+          <strong>
+            BURN Customer
+          </strong>
+
+        </div>
+
+
+        <div class="review">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            "Best burgers in the area.
+            Fries were crispy and everything arrived hot."
+          </p>
+
+          <strong>
+            BURN Customer
+          </strong>
+
+        </div>
+
+
+        <div class="review">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            "The kind of burger you finish and
+            immediately start thinking about getting again."
+          </p>
+
+          <strong>
+            BURN Customer
+          </strong>
 
         </div>
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
-    <!-- =========================
-         REVIEWS
-    ========================= -->
+  <!-- =========================
+       LOCATION
+  ========================= -->
 
-    <section class="reviews" id="reviews">
+  <section class="location-section" id="location">
 
-      <div class="container">
+    <div class="location-image"></div>
 
-        <div class="section-header">
+    <div class="location-content">
 
-          <div>
+      <div>
 
-            <div class="section-label">
-              SOCIAL PROOF
-            </div>
-
-            <h2 class="section-title">
-              PEOPLE<br>
-              GET IT.
-            </h2>
-
-          </div>
-
-          <p class="section-description">
-            Your real customer reviews will go here.
-            Replace these placeholders once BURN starts
-            collecting Google reviews.
-          </p>
-
+        <div class="eyebrow">
+          FIND BURN
         </div>
 
+        <h2 class="display">
+          COME<br />
+          HUNGRY.
+        </h2>
 
-        <div class="review-grid">
-
-          <article class="review">
-
-            <div class="stars">
-              ★★★★★
-            </div>
-
-            <p>
-              “Juicy grilled beef, great sauce and
-              the burger actually tastes grilled.”
-            </p>
-
-            <div class="review-author">
-              — BURN CUSTOMER
-            </div>
-
-          </article>
-
-
-          <article class="review">
-
-            <div class="stars">
-              ★★★★★
-            </div>
-
-            <p>
-              “The kind of burger you finish and
-              immediately start thinking about again.”
-            </p>
-
-            <div class="review-author">
-              — BURN CUSTOMER
-            </div>
-
-          </article>
-
-
-          <article class="review">
-
-            <div class="stars">
-              ★★★★★
-            </div>
-
-            <p>
-              “Big flavor, crispy fries and
-              everything arrived hot.”
-            </p>
-
-            <div class="review-author">
-              — BURN CUSTOMER
-            </div>
-
-          </article>
-
+        <div class="location-address">
+          Shahdara, Lahore, Pakistan
         </div>
 
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         LOCATION
-    ========================= -->
-
-    <section class="location">
-
-      <div class="container location-grid">
-
-
-        <div class="location-card">
-
-          <div class="section-label">
-            FIND BURN
-          </div>
-
-          <h3>
-            COME<br>
-            HUNGRY.
-          </h3>
-
-          <p>
-            BURN — Grilled Beef Burgers
-          </p>
-
-          <div class="location-detail">
-            Shahdara, Lahore, Pakistan
-          </div>
-
+        <div class="location-copy">
+          Delivery & pickup available.
         </div>
 
-
-        <div class="location-card light">
-
-          <div class="section-label">
-            ORDER
-          </div>
-
-          <h3>
-            YOUR<br>
-            CRAVING.
-          </h3>
-
-          <p>
-            Order directly through WhatsApp
-            and get your BURN fix.
-          </p>
+        <div style="margin-top: 28px;">
 
           <a
-            class="btn btn-primary"
-            href="https://wa.me/923184644493?text=Hi%20BURN!%20I'd%20like%20to%20place%20an%20order."
+            class="btn btn-red"
+            href="https://wa.me/923184644493?text=Hi%20BURN,%20I%20want%20to%20place%20an%20order."
             target="_blank"
             rel="noopener"
-            style="margin-top:25px;"
           >
             ORDER ON WHATSAPP
           </a>
 
         </div>
 
-
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
-    <!-- =========================
-         FINAL CTA
-    ========================= -->
+  <!-- =========================
+       FINAL CTA
+  ========================= -->
 
-    <section class="final-cta">
+  <section class="final-cta">
 
-      <div class="container">
+    <div class="eyebrow">
+      ORDER NOW
+    </div>
 
-        <div class="section-label">
-          BORN TO GRILL
-        </div>
+    <h2 class="display">
+      HUNGRY?
+      <span>GOOD.</span>
+    </h2>
 
-        <h2>
-          HUNGRY?<br>
-          <span>GOOD.</span>
-        </h2>
+    <p>
+      Your next burger is one WhatsApp message away.
+    </p>
 
-        <p>
-          You bring the craving.
-          We'll handle the grill.
-        </p>
+    <a
+      class="btn btn-red"
+      href="https://wa.me/923184644493?text=Hi%20BURN,%20I%20want%20to%20place%20an%20order."
+      target="_blank"
+      rel="noopener"
+    >
+      ORDER ON WHATSAPP
+    </a>
 
-        <a
-          class="btn btn-primary"
-          href="https://wa.me/923184644493?text=Hi%20BURN!%20I'd%20like%20to%20place%20an%20order."
-          target="_blank"
-          rel="noopener"
-          style="margin-top:30px;"
-        >
-          ORDER NOW
-        </a>
-
-      </div>
-
-    </section>
-
-  </main>
+  </section>
 
 
   <!-- =========================
@@ -1566,75 +1439,15 @@
 
   <footer>
 
-    <div class="container">
+    <div class="container footer-inner">
 
-      <div class="footer-grid">
-
-        <div class="footer-brand">
-
-          <div class="logo">
-            B<span>U</span>RN
-            <small>GRILLED BEEF BURGERS</small>
-          </div>
-
-          <p>
-            Bold grilled beef burgers built for cravings.
-            BORN TO GRILL.
-          </p>
-
-        </div>
-
-
-        <div class="footer-column">
-
-          <h4>
-            Explore
-          </h4>
-
-          <a href="#burgers">
-            Burgers
-          </a>
-
-          <a href="#combos">
-            Combos
-          </a>
-
-          <a href="#why">
-            Why BURN
-          </a>
-
-          <a href="#reviews">
-            Reviews
-          </a>
-
-        </div>
-
-
-        <div class="footer-column">
-
-          <h4>
-            Order
-          </h4>
-
-          <a
-            href="https://wa.me/923184644493?text=Hi%20BURN!%20I'd%20like%20to%20place%20an%20order."
-            target="_blank"
-            rel="noopener"
-          >
-            WhatsApp
-          </a>
-
-          <a href="#burgers">
-            View Menu
-          </a>
-
-        </div>
-
+      <div class="footer-logo">
+        BURN
+        <span>GRILLED BEEF BURGERS</span>
       </div>
 
-
-      <div class="footer-bottom">
-        © 2026 BURN — GRILLED BEEF BURGERS. BORN TO GRILL.
+      <div class="footer-copy">
+        © 2026 BURN. Grilled Beef Burgers. Shahdara, Lahore.
       </div>
 
     </div>
@@ -1646,61 +1459,15 @@
        MOBILE ORDER BAR
   ========================= -->
 
-  <div class="mobile-order">
+  <a
+    class="mobile-order"
+    href="https://wa.me/923184644493?text=Hi%20BURN,%20I%20want%20to%20place%20an%20order."
+    target="_blank"
+    rel="noopener"
+  >
+    ORDER ON WHATSAPP
+  </a>
 
-    <a
-      href="https://wa.me/923184644493?text=Hi%20BURN!%20I'd%20like%20to%20place%20an%20order."
-      target="_blank"
-      rel="noopener"
-    >
-      ORDER ON WHATSAPP
-    </a>
-
-  </div>
-
-
-  <!-- =========================
-       WHATSAPP CLICK TRACKING
-  ========================= -->
-
-  <script>
-
-    document.querySelectorAll('a[href*="wa.me"]').forEach(function(button) {
-
-      button.addEventListener("click", function() {
-
-        console.log("BURN WhatsApp order CTA clicked");
-
-      });
-
-    });
-
-  </script>
-
-
-  <!-- =========================
-       RESTAURANT SEO SCHEMA
-  ========================= -->
-
-  <script type="application/ld+json">
-
-  {
-    "@context": "https://schema.org",
-    "@type": "Restaurant",
-    "name": "BURN — Grilled Beef Burgers",
-    "description": "Juicy grilled beef burgers in Shahdara, Lahore.",
-    "servesCuisine": "Burgers",
-    "priceRange": "Rs. 499 - Rs. 799",
-    "telephone": "+923184644493",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Shahdara",
-      "addressRegion": "Lahore",
-      "addressCountry": "PK"
-    }
-  }
-
-  </script>
 
 </body>
 </html>
